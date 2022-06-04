@@ -1,0 +1,40 @@
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html, body{
+    font-family: 'Poppins', sans-serif
+}
+
+.header{
+    padding: 1.5rem 4rem;
+    display:flex;
+    align-items: center;
+    justify-content: space-between; 
+}
+
+.header__logo{
+    height:2rem;
+    width:auto;
+}
+
+.navigation{
+    display:flex;
+    align-items: center;
+    column-gap: 3rem;
+}
+
+.button{
+    font-weight:600;
+    padding:0.5rem 1rem;
+    border-radius: 0.25rem;
+}
+
+.button--transparent{
+    border: 0.2rem solid #02B574;
+    color: #02B574;
+    text-decoration: none;
+    font-size:1.2rem;
+}
