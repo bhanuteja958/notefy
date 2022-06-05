@@ -1,0 +1,21 @@
+.hero{
+    display: grid;
+    align-items: center;
+    grid-template-columns: repeat(2,1fr);
+    padding: 1.5rem 8rem;
+}
+
+.hero__right{
+    text-align: right;
+}
+
+.hero__tagline{
+    font-size:4.3rem;
+    line-height: 6rem;
+    margin-bottom:2rem;
+}
+
+.hero__illustration{
+    width:90%;
+    height:auto;
+}

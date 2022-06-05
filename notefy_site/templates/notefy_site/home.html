@@ -1,1 +1,18 @@
 {% extends 'notefy_site/base.html' %}
+{% load static %}
+
+{% block static_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notefy_site/css/home.css' %}">
+{% endblock%}
+
+{% block content %}
+    <section class="hero">
+        <div class="hero__left">
+            <h1 class="hero__tagline">Convert your thoughts to words </h1>
+            <button class="button button--solid">Get Started</button>
+        </div>
+        <div class="hero__right">
+            <img src="{% static 'notefy_site/images/home.svg' %}" alt="An illustration of an animated person creating notes" class="hero__illustration"/>
+        </div>
+    </section>
+{% endblock %}

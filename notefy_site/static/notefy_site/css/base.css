@@ -8,11 +8,20 @@ html, body{
     font-family: 'Poppins', sans-serif
 }
 
+input , button{
+    font-family:inherit ;
+}
+
 .header{
-    padding: 1.5rem 4rem;
+    padding: 1.5rem 8rem;
     display:flex;
     align-items: center;
     justify-content: space-between; 
+    border-bottom: 0.2rem solid #f1f1f1;
+    position: sticky;
+    top:0;
+    left:0;
+    width:100%;
 }
 
 .header__logo{
@@ -28,7 +37,6 @@ html, body{
 
 .button{
     font-weight:600;
-    padding:0.5rem 1rem;
     border-radius: 0.25rem;
 }
 
@@ -37,4 +45,15 @@ html, body{
     color: #02B574;
     text-decoration: none;
     font-size:1.2rem;
+    padding:0.5rem 1rem;
+}
+
+.button--solid{
+    background-color: #02B574;
+    color:white;
+    text-decoration: none;
+    font-size:2rem;
+    padding:0.5rem 4rem;
+    border:none;
+    cursor: pointer;
 }

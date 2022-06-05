@@ -8,12 +8,13 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    {% block static_content %}{% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'notefy_site/css/base.css' %}">
     <title>{{title}}</title>
 </head>
 <body>
     <header class="header">
-        <img src="{% static 'notefy_site/images/logo.svg' %}" class="header__logo"/>
+        <img src="{% static 'notefy_site/images/logo.svg' %}" class="header__logo" alt="A logo of the website"/>
         <nav class="navigation">
             <a href="#" class="button button--transparent">Login</a>
             <a href="#" class="button button--transparent">Signup</a>
