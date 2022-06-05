@@ -14,10 +14,12 @@
 </head>
 <body>
     <header class="header">
-        <img src="{% static 'notefy_site/images/logo.svg' %}" class="header__logo" alt="A logo of the website"/>
+        <a href="/">
+            <img src="{% static 'notefy_site/images/logo.svg' %}" class="header__logo" alt="A logo of the website"/>
+        </a>
         <nav class="navigation">
-            <a href="#" class="button button--transparent">Login</a>
-            <a href="#" class="button button--transparent">Signup</a>
+            <a href="/login" class="button button--transparent">Login</a>
+            <a href="/signup" class="button button--transparent">Signup</a>
         </nav>
     </header>
     {% block content%}

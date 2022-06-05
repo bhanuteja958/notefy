@@ -1,4 +1,4 @@
-.signup{
+.signup, .login{
     display: flex;
     align-items: center;
     justify-content: center;
@@ -6,19 +6,19 @@
     width:100%;
 }
 
-.signup__content{
+.signup__content, .login__content{
     padding:1rem 2rem;
     box-shadow: 0 0 0.25rem  #AAAAAA;
     width:30%;
     border-radius: 0.5rem;
 }
 
-.signup__title{
+.signup__title, .login__title {
     text-align: center;
     font-size:2rem
 }
 
-.signup__form{
+.signup__form, .login__form{
     display: flex;
     flex-direction: column;
     row-gap: 1rem;
@@ -42,7 +42,7 @@
     font-size: 1rem;
 }
 
-.signup__redirectMsg{
+.signup__redirectMsg, .login__redirectMsg{
     margin-top:0.5rem;
     text-align: center;
 }

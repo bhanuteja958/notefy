@@ -23,3 +23,16 @@ class SignupForm(forms.Form):
         min_length=7,
         required=True
     )
+
+class LoginForm(forms.Form):
+    email=forms.EmailField(
+        widget=forms.TextInput(attrs={'class':'formControl'}),
+        label="email",
+        required=True
+    )
+    password=forms.CharField(
+        widget=forms.PasswordInput(attrs={'class':'formControl'}),
+        label='password',
+        required=True
+    )
+

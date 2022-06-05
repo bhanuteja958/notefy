@@ -1,0 +1,30 @@
+{% extends 'notefy_site/base.html'%}
+{% load static %}
+
+{% block static_content %}
+    <link rel="stylesheet" href="{% static 'notefy_site/css/forms.css' %}">
+{% endblock%}
+
+{% block content %}
+    <div class="login">
+        <div class="login__content">
+            <h2 class="login__title">Login</h2>
+            <form action="/login" method="POST" class="login__form">
+                <div class="formGroup">
+                    <label for='{{login_form.email.id_for_label}}' class="formLabel">Email:</label>
+                    {{login_form.email}}
+                    {{login_form.email.errors}}
+                </div>
+                <div class="formGroup">
+                    <label for='{{login_form.password.id_for_label}}' class="formLabel">Password:</label>
+                    {{login_form.password}}
+                    {{login_form.password.errors}}
+                </div>
+                <input type="submit" value="Signup" class="button button--solid button--small">
+            </form>
+            <p class="login__redirectMsg">
+                Don't have an account? <a href="/signup">Signup</a>
+            </p>
+        </div>  
+    </div>
+{% endblock %}
