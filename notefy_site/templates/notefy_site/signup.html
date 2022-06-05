@@ -1,0 +1,41 @@
+{% extends 'notefy_site/base.html' %}
+{% load static %}
+
+{% block static_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notefy_site/css/forms.css' %}">
+{% endblock %}
+
+{% block content %} 
+    <div class="signup">
+        <div class="signup__content">
+            <h2 class="signup__title">Signup</h2>
+            <form action="{% url 'signup' %}" method="POST" class="signup__form">
+                {{ signup_form.non_field_errors}}
+                <div class="formGroup">
+                    <label for='{{signup_form.full_name.id_for_label}}' class="formLabel">Full Name:</label>
+                    {{signup_form.full_name}}
+                    {{signup_form.full_name.errors}}
+                </div>
+                <div class="formGroup">
+                    <label for='{{signup_form.email.id_for_label}}' class="formLabel">Email:</label>
+                    {{signup_form.email}}
+                    {{signup_form.email.errors}}
+                </div>
+                <div class="formGroup">
+                    <label for='{{signup_form.password.id_for_label}}' class="formLabel">Password:</label>
+                    {{signup_form.password}}
+                    {{signup_form.password.errors}}
+                </div>
+                <div class="formGroup">
+                    <label for='{{signup_form.confirm_password.id_for_label}}' class="formLabel">Confirm Password:</label>
+                    {{signup_form.confirm_password}}
+                    {{signup_form.confirm_password.errors}}
+                </div>
+                <input type="submit" value="Signup" class="button button--solid button--small">
+            </form>
+            <p class="signup__redirectMsg">
+                Already have and account? <a href="#">login</a>
+            </p>
+        </div>
+    </div>
+{% endblock%}

@@ -52,8 +52,15 @@ input , button{
     background-color: #02B574;
     color:white;
     text-decoration: none;
-    font-size:2rem;
     padding:0.5rem 4rem;
     border:none;
     cursor: pointer;
+}
+
+.button--small{
+    font-size: 1rem;
+}
+
+.button--large{
+    font-size: 2rem;
 }
