@@ -1,9 +1,10 @@
 from django import forms
 
+
 class SignupForm(forms.Form):
-    full_name=forms.CharField(
+    user_name=forms.CharField(
         widget=forms.TextInput(attrs={'class':'formControl'}),
-        label="full_name",
+        label="user_name",
         min_length=3,
         max_length=50,
         required=True

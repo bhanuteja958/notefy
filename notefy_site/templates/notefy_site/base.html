@@ -18,11 +18,32 @@
             <img src="{% static 'notefy_site/images/logo.svg' %}" class="header__logo" alt="A logo of the website"/>
         </a>
         <nav class="navigation">
-            <a href="/login" class="button button--transparent">Login</a>
-            <a href="/signup" class="button button--transparent">Signup</a>
+            {% if user.is_authenticated %}
+                <div class="userDropdown">
+                    <p class="userDropdown__actionBlock">
+                        <span class="userDropdown__username">{{user.username}}</span>
+                        <img class="userDropDown__chevronIcon" src="{% static 'notefy_site/images/chevron_down.svg'%}">
+                    </p>
+                    <ul class="userDropdown__content">
+                        <li class="userDropdown__option">
+                            <a href="#" class="userDropdown__optionName">My Notes</a>
+                        </li>
+                        <li class="userDropdown__option">
+                            <a href="#" class="userDropdown__optionName">Account</a>
+                        </li>
+                        <li class="userDropdown__option">
+                            <a href="/logout" class="userDropdown__optionName">Sign Out</a>
+                        </li>
+                    </ul>
+                </div>
+            {% else %}
+                <a href="/login" class="button button--transparent">Login</a>
+                <a href="/signup" class="button button--transparent">Signup</a>
+            {% endif %}
         </nav>
     </header>
     {% block content%}
     {% endblock %}
+    <script src="{% static 'notefy_site/js/base.js' %}"></script>
 </body>
 </html>

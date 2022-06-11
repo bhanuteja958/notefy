@@ -10,11 +10,12 @@
         <div class="signup__content">
             <h2 class="signup__title">Signup</h2>
             <form action="{% url 'signup' %}" method="POST" class="signup__form">
+                {% csrf_token %}
                 {{ signup_form.non_field_errors}}
                 <div class="formGroup">
-                    <label for='{{signup_form.full_name.id_for_label}}' class="formLabel">Full Name:</label>
-                    {{signup_form.full_name}}
-                    {{signup_form.full_name.errors}}
+                    <label for='{{signup_form.user_name.id_for_label}}' class="formLabel">User Name:</label>
+                    {{signup_form.user_name}}
+                    {{signup_form.user_name.errors}}
                 </div>
                 <div class="formGroup">
                     <label for='{{signup_form.email.id_for_label}}' class="formLabel">Email:</label>

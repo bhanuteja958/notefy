@@ -61,3 +61,51 @@ input , button{
 .button--large{
     font-size: 2rem;
 }
+
+.userDropdown{
+    position: relative;
+}
+
+.userDropdown__actionBlock{
+    display: flex;
+    align-items: center;
+    column-gap: 0.25rem;
+    cursor: pointer;
+}
+
+.userDropdown__username{
+    font-weight: bold;
+    font-size:1.2rem;
+}
+
+.userDropdown__content{
+    position: absolute;
+    z-index: 10;
+    right:0;
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 0 2px 0 #999999;
+    min-width:150px;
+    list-style-type: none;
+    margin-top:0.5rem;
+    display: none;
+}
+
+.userDropdown__option{
+    padding:0.25rem 1rem;
+    font-size:1.1rem;
+}
+
+.userDropdown__option:hover{
+    background-color: #EEEEEE;
+}
+
+.userDropdown__option:not(:last-child){
+    border-bottom:1px solid #CCCCCC
+}
+
+.userDropdown__optionName{
+    text-decoration: none;
+    font-weight:600;
+    color:black;
+}

@@ -10,6 +10,7 @@
         <div class="login__content">
             <h2 class="login__title">Login</h2>
             <form action="/login" method="POST" class="login__form">
+                {% csrf_token %}
                 <div class="formGroup">
                     <label for='{{login_form.email.id_for_label}}' class="formLabel">Email:</label>
                     {{login_form.email}}
