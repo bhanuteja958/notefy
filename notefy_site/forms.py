@@ -32,8 +32,21 @@ class LoginForm(forms.Form):
         required=True
     )
     password=forms.CharField(
-        widget=forms.PasswordInput(attrs={'class':'formControl'}),
+        widget=forms.PasswordInput(attrs={'class':'formControl'},),
         label='password',
         required=True
     )
+
+class NoteForm(forms.Form):
+    title=forms.CharField(
+        widget=forms.TextInput(attrs={'class':'editor__titleInput', 'placeholder': 'Title here'}),
+        label="title",
+        required=True
+    )
+    markdown=forms.CharField(
+        widget=forms.Textarea(attrs={'class':'editor__markdownInput', 'placeholder': 'Markdown here'}),
+        label="markdown",
+        required=True
+    )
+
 

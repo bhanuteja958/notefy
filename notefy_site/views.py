@@ -1,5 +1,5 @@
-from django.shortcuts import render
-from . import forms
+from django.shortcuts import redirect, render
+from . import forms,models
 from django.http import HttpResponseRedirect
 from django.contrib import messages
 from django.contrib.auth import authenticate, login, logout
@@ -73,6 +73,48 @@ def login_user(request):
 def logout_user(request):
     logout(request)
     return HttpResponseRedirect('/')
+
+def notes(request):
+    context = {
+        'title': 'Notefy - Notes'
+    }
+    return render(request, 'notefy_site/notes.html', context)
+
+def add_note(request):
+    current_user = request.user
+    newNote = models.Note(title='Example Title', content='Example Content', created_by=current_user)
+    newNote.save()
+    return redirect(f'/note-editor/{newNote.pk}')
+
+def note_editor(request, pk):
+    note = models.Note.objects.get(id=pk)
+
+    if note:
+        if request.method == 'POST':
+            note_form = forms.NoteForm(request.POST)
+            if note_form.is_valid():
+                title = note_form.cleaned_data['title']
+                markdown = note_form.cleaned_data['markdown']
+                note.title = title
+                note.content = markdown
+                note.save()
+                return redirect(f'/note-editor/{pk}')
+        else:
+            form_data = {
+                'title': note.title,
+                'markdown': note.content
+            }
+            note_form = forms.NoteForm(data=form_data)
+    else:
+        return redirect('/notes')
+
+    context = {
+        'title': 'Notefy - Editor',
+        'note_form': note_form,
+        'note': note
+    }
+    return render(request, 'notefy_site/note_editor.html', context)
+
 
         
 

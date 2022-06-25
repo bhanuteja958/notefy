@@ -8,6 +8,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/showdown/1.9.0/showdown.min.js" defer></script>
+    <script type="text/javascript" src="{% static 'notefy_site/js/base.js' %}" defer></script>
     {% block static_content %}{% endblock %}
     <link rel="stylesheet" type="text/css" href="{% static 'notefy_site/css/base.css' %}">
     <title>{{title}}</title>
@@ -26,7 +28,7 @@
                     </p>
                     <ul class="userDropdown__content">
                         <li class="userDropdown__option">
-                            <a href="#" class="userDropdown__optionName">My Notes</a>
+                            <a href="/notes" class="userDropdown__optionName">My Notes</a>
                         </li>
                         <li class="userDropdown__option">
                             <a href="#" class="userDropdown__optionName">Account</a>
@@ -44,6 +46,5 @@
     </header>
     {% block content%}
     {% endblock %}
-    <script src="{% static 'notefy_site/js/base.js' %}"></script>
 </body>
 </html>

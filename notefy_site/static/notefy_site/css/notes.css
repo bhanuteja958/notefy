@@ -1,0 +1,51 @@
+.notes{
+   padding: 2rem 8rem;
+   display: grid;
+   grid-template-columns: 15% 85%;
+}
+
+.notes__addBtn{
+    font-size:1.2rem;
+    color: #02B574;
+    border: 0.2rem dashed #02B574;
+    background-color: white;
+    padding:0.25rem 0.5rem;
+    font-weight:bold;
+    border-radius:0.2rem;
+}
+
+.notes__controls{
+    margin-top:2.5rem;
+    list-style-type: none;
+    display: flex;
+    flex-direction: column;
+    row-gap: 0.75rem;
+}
+
+.notes__controlName{
+    font-size:1.2rem;
+    font-weight:bold;
+    cursor: pointer;
+}
+
+.searchbar{
+    padding:0.25rem 1rem;
+    display: flex;
+    column-gap:0.75rem;
+    align-items: center;
+    box-shadow: 0 0 4px 0 inset #999999;
+    border-radius: 0.2rem;
+}
+
+.searchbar__searchIcon{
+    height:1.75rem;
+    width:auto;
+}
+
+.searchbar__input{
+    padding:0.5rem;
+    width:100%;
+    border:none;
+    font-size: 1.2rem;
+    outline: none;
+}

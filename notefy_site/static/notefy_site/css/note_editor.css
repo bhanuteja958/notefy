@@ -1,0 +1,107 @@
+.editor{
+    padding: 2rem 8rem;
+}
+
+.editor__actions{
+    display: flex;
+    align-items: center;
+    justify-content: right;
+    gap:2rem;
+}
+
+.editor__saveBtn{
+    display:none;
+}
+
+.editor__editBtn{
+    background-color: #0275d8 !important;
+}
+
+.note{
+    margin-top:2rem;
+}
+
+.note__title{
+    font-size:2rem;
+    font-weight:600;
+    border-bottom: 0.05rem solid #DDDDDD;
+    padding-bottom:0.5rem;
+}
+
+.note__content{
+    margin-top:1rem;
+    min-height:80vh;
+    outline:none;
+}
+
+.editor__form{
+    position: fixed;
+    width:100%;
+    bottom:0;
+    left:0;
+    z-index:15;
+    background-color: white;
+    box-shadow: 0 0 2px 0 #CCCCCC;
+    height:65%;
+    padding: 0.5rem 1rem;
+    display: none;
+    grid-template-rows: max-content auto ;
+}
+
+.editor__header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.editor__title{
+    font-size:1.5rem;
+}
+
+.editor__closeIcon{
+    font-size:2.5rem;
+    cursor: pointer;
+}
+
+.editor__titleInput{
+    outline:none;
+    border:none;
+    border-radius: 0.25rem;
+    padding: 0.5rem 1rem;
+    font-size:1rem;
+    width:100%;
+    background-color: #EEEEEEEE;
+}
+
+.editor__markdownInput{
+    outline:none;
+    border:none;
+    height: 85%;
+    overflow-y: auto;
+    border-radius: 0.25rem;
+    padding:1rem;
+    font-size:1rem;
+    width:100%;
+    resize: none;
+    background-color: #EEEEEEEE;
+    margin-top:1rem;
+}
+
+
+/* styling for markdown converted to html */
+
+.note__content p{
+    margin-bottom: 1rem;
+}
+
+.note__cotent h1{
+    font-size: 2rem;
+}
+
+.note__content h2{
+    font-size: 1.75rem;
+}
+
+.note__content h3{
+    font-size: 1.5rem;
+}

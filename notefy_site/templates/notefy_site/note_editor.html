@@ -1,0 +1,33 @@
+{% extends 'notefy_site/base.html' %}
+{% load static %}
+
+{% block static_content %}
+    <link rel="stylesheet" href="{% static 'notefy_site/css/note_editor.css' %}">
+    <script src="{% static 'notefy_site/js/note_editor.js' %}" defer></script>
+{% endblock %}
+
+{% block content %}
+    <section class="editor">
+        <div class="editor__actions">
+            <button class="button button--solid button--small editor__editBtn">Edit</button>
+            <button class="button button--solid button--small editor__saveBtn">Save</button>
+        </div>
+        <div class="note">
+            <p class="note__title">{{ note.title }}</p>
+            <div class="note__content">
+                {{ note.content }}
+            </div>
+        </div>
+        <div class="editor__form">
+            <div class="editor__header">
+                <h3 class="editor__title">Note Editor</h3>
+                <p class="editor__closeIcon">&times;</p>
+            </div>
+            <form class="editor__formInputs" action="/note-editor/{{note.id}}" method="POST">
+                {% csrf_token %}
+                {{note_form.title}}
+                {{note_form.markdown}}
+            </form>
+        </div>
+    </section>
+{% endblock %}

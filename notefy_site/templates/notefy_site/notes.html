@@ -1,0 +1,25 @@
+{% extends 'notefy_site/base.html'%}
+{% load static %}
+
+{% block static_content %}
+    <link rel="stylesheet" type="text/css" href="{% static 'notefy_site/css/notes.css'%}">
+    <script type="text/javascript" src="{% static 'notefy_site/js/notes.js'%}" defer></script>
+{% endblock %}
+
+{% block content %}
+    <section class="notes">
+        <aside class="notes__aside">
+            <button class="button button--medium button--dashed button--addNote">+ Add Note</button>
+            <ul class="notes__controls">
+                <li class="notes__controlName" >All Notes</li>
+                <li class="notes__controlName">Important</li>
+            </ul>
+        </aside>
+        <main class="notes__main">
+            <div class="searchbar">
+                <img class="searchbar__searchIcon" src="{% static 'notefy_site/images/search_icon.svg'%}"/>
+                <input class="searchbar__input" placeholder="Search for a note"/>
+            </div>
+        </main>
+    </section>
+{% endblock %}
